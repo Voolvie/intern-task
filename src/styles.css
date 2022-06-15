@@ -1,0 +1,12 @@
+.cards {
+    margin: auto;
+    display: table;
+    text-align: center;
+}
+.card {
+    height: 200px;
+    width: 200px;
+    border: solid black;
+    margin-top: 5px;
+    cursor: pointer;
+}
