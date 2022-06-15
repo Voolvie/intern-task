@@ -58,8 +58,8 @@ const App = () => {
           <div key={student.name} className="card" style={{ borderColor:[color], backgroundColor:[bgColor]}} onClick={Clicked}>
           <h3>{student.name}</h3>
           <h3>{student.lastName}</h3>
-          <h5>{sum}</h5>
-          <h5>{average}</h5>
+          <h5>Sum: {sum}</h5>
+          <h5>Average: {average}</h5>
           </div>
         )
       })}
