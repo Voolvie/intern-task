@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react"
 
-function App() {
+const App = () => {
+const [counter, setCounter] = useState(0)
+const [word, setWord] = useState('Jeden')
+const [change, setChange] = useState(true)
+const [inputWord, setInputWord] = useState('')
+
+function Add () {
+  setCounter(counter + 1) 
+}
+function Zero () {
+  setCounter(0) 
+}
+function Remove () {
+  setCounter(counter - 1) 
+}
+function handleChange () {
+  if(change === true) {
+    setWord('Dwa')
+  } else {
+    setWord('Jeden')
+  }
+  setChange(!change)
+  
+}
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div>
+        <h1>{counter}</h1>
+        <button onClick={Add}>+</button>
+        <button onClick={Zero}>0</button>
+        <button onClick={Remove}>-</button>
+      </div>
+      <div>
+        <h1>{word}</h1>
+        <button onClick={(handleChange)}>Change</button>
+      </div>
+      <div>
+        <h1>{inputWord}</h1>
+        <input type="text" onChange={(e) => setInputWord(e.target.value)} />
+      </div>
     </div>
-  );
+   
+  )
 }
 
 export default App;
